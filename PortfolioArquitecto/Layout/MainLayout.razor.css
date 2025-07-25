@@ -1,77 +1,429 @@
-.page {
-    position: relative;
+/* ==========================================
+   LAYOUT PRINCIPAL - VARIABLES CSS
+   ========================================== */
+.page-container {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --text-dark: #2c3e50;
+    --background-light: #ffffff;
+    --background-dark: #1a1a1a;
+    --navbar-height: 80px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================
+   NAVEGACIÓN PRINCIPAL
+   ========================================== */
+.navbar {
+    background: rgba(44, 62, 80, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: var(--transition);
+    padding: 1rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled {
+    background: rgba(44, 62, 80, 0.98) !important;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo y Marca */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light) !important;
+    text-decoration: none;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    transition: var(--transition);
 }
 
-main {
-    flex: 1;
+.navbar-brand:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
 }
 
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+.brand-text {
+    margin-left: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
 }
 
-.top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
+/* Enlaces de navegación */
+.navbar-nav .nav-link {
+    color: var(--text-light) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    width: 80%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--text-light) !important;
+    background: rgba(231, 76, 60, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--accent-color) !important;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(231, 76, 60, 0.25);
+}
+
+/* ==========================================
+   REDES SOCIALES EN NAVBAR
+   ========================================== */
+.social-links {
+    gap: 1rem;
+}
+
+.social-link {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    background: rgba(231, 76, 60, 0.1);
+    transform: translateY(-3px) scale(1.1);
+    text-decoration: none;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL
+   ========================================== */
+.main-content {
+    min-height: calc(100vh - 80px);
+    padding-top: var(--navbar-height);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-section {
+    height: 100%;
+}
+
+.footer-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
     display: flex;
     align-items: center;
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
+.footer-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--text-light);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+.footer-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(236, 240, 241, 0.8);
+    margin-bottom: 0;
+}
+
+/* Lista del footer */
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-list li {
+    padding: 0.4rem 0;
+    color: rgba(236, 240, 241, 0.8);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-list li:hover {
+    color: var(--text-light);
+    transform: translateX(5px);
+}
+
+/* Información de contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    color: rgba(236, 240, 241, 0.8);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    color: var(--text-light);
+    transform: translateX(3px);
+}
+
+/* Redes sociales en footer */
+.social-links-footer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-link-footer {
+    color: rgba(236, 240, 241, 0.8);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+}
+
+.social-link-footer:hover {
+    color: var(--text-light);
+    background: var(--accent-color);
+    transform: translateY(-3px) scale(1.1);
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+}
+
+/* Footer bottom */
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(236, 240, 241, 0.1);
+}
+
+.copyright,
+.powered-by {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(236, 240, 241, 0.7);
+}
+
+.powered-by {
+    margin-top: 0.5rem;
+}
+
+/* ==========================================
+   BOTÓN VOLVER ARRIBA
+   ========================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.3);
+}
+
+.back-to-top:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(231, 76, 60, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .navbar-nav {
+        background: rgba(44, 62, 80, 0.98);
+        border-radius: 12px;
+        margin-top: 1rem;
+        padding: 1rem;
+        backdrop-filter: blur(10px);
     }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+        text-align: center;
     }
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-@media (max-width: 640.98px) {
-    .top-row {
-        justify-content: space-between;
-    }
-
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        margin-left: 0;
+    .social-links-footer {
+        justify-content: center;
     }
 }
 
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
+/* Móviles */
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 70px;
     }
 
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
+    .navbar {
+        padding: 0.75rem 0;
     }
 
-    .top-row {
-        position: sticky;
-        top: 0;
-        z-index: 1;
+    .navbar.scrolled {
+        padding: 0.5rem 0;
     }
 
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
+    .brand-text {
+        font-size: 1.1rem;
     }
 
-    .top-row, article {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
+    .footer {
+        padding: 2rem 0 1rem;
+        text-align: center;
     }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    .footer-subtitle::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .brand-text {
+        display: none;
+    }
+
+    .social-link-footer {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+
+    .copyright,
+    .powered-by {
+        font-size: 0.8rem;
+    }
+}
+
+/* ==========================================
+   ANIMACIONES Y TRANSICIONES
+   ========================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus states para accesibilidad */
+.navbar-nav .nav-link:focus,
+.social-link:focus,
+.social-link-footer:focus,
+.back-to-top:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }

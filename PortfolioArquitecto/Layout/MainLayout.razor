@@ -1,16 +1,176 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu/>
-    </div>
+@inject IJSRuntime JSRuntime
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+<div class="page-container">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <Icon Name="IconName.Building" Size="IconSize.x6" />
+                <span class="brand-text">Arquitecto</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <Icon Name="IconName.List" />
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                            <Icon Name="IconName.House" class="me-1" />
+                            Inicio
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/sobre-mi">
+                            <Icon Name="IconName.Person" class="me-1" />
+                            Sobre mi
+                        </NavLink>
+                    </li>
+                    <li class="nav-item">
+                        <NavLink class="nav-link" href="/contacto">
+                            <Icon Name="IconName.Envelope" class="me-1" />
+                            Contacto
+                        </NavLink>
+                    </li>
+                </ul>
+                
+                <div class="social-links ms-3 d-none d-lg-flex">
+                    <a href="#" class="social-link" title="Instagram">
+                        <Icon Name="IconName.Instagram" />
+                    </a>
+                    <a href="#" class="social-link" title="Whatsapp">
+                        <Icon Name="IconName.Whatsapp" />
+                    </a>
+                    <a href="#" class="social-link" title="Email">
+                        <Icon Name="IconName.Envelope" />
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
+    </nav>
+    
+    <main class="main-content">
+        @Body
     </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-section">
+                        <h5 class="footer-title">
+                            <Icon Name="IconName.Building" class="me-2" />
+                            Estudio de Arquitectura
+                        </h5>
+                        <p class="footer-description">
+                            Diseñamos espacios únicos que reflejan las necesidades y deseos 
+                            de quienes los habitarán, con pasión por cada detalle.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h6 class="footer-subtitle">Servicios</h6>
+                        <ul class="footer-list">
+                            <li><Icon Name="IconName.ArrowRight" Size="IconSize.x4" /> Anteproyecto</li>
+                            <li><Icon Name="IconName.ArrowRight" Size="IconSize.x4" /> Proyecto Ejecutivo</li>
+                            <li><Icon Name="IconName.ArrowRight" Size="IconSize.x4" /> Direccion de Obra</li>
+                            <li><Icon Name="IconName.ArrowRight" Size="IconSize.x4" /> Gerenciaamiento</li></ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h6 class="footer-subtitle">Contacto</h6>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <Icon Name="IconName.GeoAlt" class="me-2" />
+                                <span>Andris, Santana</span>
+                            </div>
+                            <div class="contact-item">
+                                <Icon Name="IconName.Telephone" class="me-2" />
+                                <span>+1 829 xxx xxx</span>
+                            </div>
+                            <div class="contact-item">
+                                <Icon Name="IconName.Envelope" class="me-2" />
+                                <span>contacto@arquitcto.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-12 mb-4">
+                    <div class="footer-section">
+                        <h6 class="footer-subtitle">Siguenos</h6>
+                        <div class="social-links-footer">
+                            <a href="#" class="social-link-footer" title="Instagram">
+                                <Icon Name="IconName.Instagram" />
+                            </a>
+                            <a href="#" class="social-link-footer" title="Facebook">
+                                <Icon Name="IconName.Facebook" />
+                            </a>
+                            <a href="#" class="social-link-footer" title="WhatsApp">
+                                <Icon Name="IconName.Whatsapp" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-bottom">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                                <p class="copyright">
+                                    © @DateTime.Now.Year Estudio de Arquitectura. 
+                                </p>
+                                <p class="powered-by">
+                                    Desarrollado con <Icon Name="IconName.Heart" class="text-danger" /> Blazor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <Button Color="ButtonColor.Primary"
+            Class="back-to-top"
+            @onclick="ScrollToTop"
+            style="@(showBackToTop ? "display: block;" : "display: none;")"
+            title="Volver arriba">
+        <Icon Name="IconName.ArrowUp" />
+    </Button>
 </div>
+
+@code
+{
+    private bool showBackToTop = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initializeLayout");
+            await JSRuntime.InvokeVoidAsync("addScrollListener", DotNetObjectReference.Create(this));
+        }
+    }
+
+    [JSInvokable]
+    public void OnScroll(int scrollY)
+    {
+        var shouldShow = scrollY > 300;
+        if (shouldShow != showBackToTop)
+        {
+            showBackToTop = shouldShow;
+            StateHasChanged();
+        }
+    }
+
+    private async Task ScrollToTop()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToTop");
+    }
+}
