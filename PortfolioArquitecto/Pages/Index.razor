@@ -5,35 +5,36 @@
 <PageTitle>Inicio - Estudio de Arquitectura</PageTitle>
 
 <section class="hero-section">
-    <div class="hero-overlay" />
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <div class="container">
             <div class="row align-items-center min-vh-100">
-                <div class="hero-text animate-on-scroll">
-                    <h1 class="hero-title">
-                        Diseñamos espacios que
-                        <span class="text-accent">inspiran</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        Estudio de arquitectura especializado en viviendas unifamiliares 
-                        y proyectos comerciales, con más de 8 años creando espacios únicos 
-                        que reflejan la personalidad de nuestros clientes.
-                    </p>
-                    <div class="hero-buttons">
-                        <Button Color="ButtonColor.Primary"
-                                Size="ButtonSize.Large"
-                                Class="hero-btn-primary me-3"
-                                @onclick="ScrollToProyectos">
-                            <Icon Name="IconName.Grid3X3Gap" class="me-2" />
-                            Ver Proyectos
-                        </Button>
-                        <Button Color="ButtonColor.Secondary"
-                                Size="ButtonSize.Large"
-                                Class="hero-btn-secondary"
-                                @onclick="ScrollToContacto">
-                            <Icon Name="IconName.Envelope" class="me-2" />
-                            Contactar
-                        </Button>
+                <div class="col-12 text-center">
+                    <div class="hero-text animate-on-scroll">
+                        <h1 class="hero-title">
+                            Diseñamos espacios <AnimatedText Words="@palabras" />
+                        </h1>
+                        <p class="hero-subtitle">
+                            Estudio de arquitectura especializado en viviendas unifamiliares 
+                            y proyectos comerciales, con más de 8 años creando espacios únicos 
+                            que reflejan la personalidad de nuestros clientes.
+                        </p>
+                        <div class="hero-buttons">
+                            <Button Color="ButtonColor.Primary"
+                                    Size="ButtonSize.Large"
+                                    Class="hero-btn-primary me-3"
+                                    @onclick="ScrollToProyectos">
+                                <Icon Name="IconName.Grid3X3Gap" class="me-2" />
+                                Ver Proyectos
+                            </Button>
+                            <Button Color="ButtonColor.Primary"
+                                    Size="ButtonSize.Large"
+                                    Class="hero-btn-primary me-3"
+                                    @onclick="ScrollToContacto">
+                                <Icon Name="IconName.Envelope" class="me-2" />
+                                Contactar
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -47,25 +48,311 @@
     </div>
 </section>
 
+<section id="servicios" class="services-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <p class="section-subtitle">
+                        Acompañamos cada proyecto desde la idea inicial hasta la entrega final, 
+                        con un enfoque integral y personalizado para cada cliente.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <Card Class="service-card h-100 animate-on-scroll">
+                    <CardBody Class="text-center p-4">
+                        <div class="service-icon">
+                            <Icon Name="IconName.Lightbulb" Size="IconSize.x6" />
+                        </div>
+                        <CardTitle Class="service-title">01. Anteproyecto</CardTitle>
+                        <CardText Class="service-description">
+                            Fase creativa donde desarrollamos el primer concepto del proyecto, 
+                            definiendo espacios y dimensiones según tus necesidades específicas 
+                            y estilo de vida.
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <Card Class="service-card h-100 animate-on-scroll">
+                    <CardBody Class="text-center p-4">
+                        <div class="service-icon">
+                            <Icon Name="IconName.Pen" Size="IconSize.x6" />
+                        </div>
+                        <CardTitle Class="service-title">02. Proyecto Ejecutivo</CardTitle>
+                        <CardText Class="service-description">
+                            Documentación técnica completa: planos arquitectónicos, estructurales, 
+                            especificaciones técnicas, detalles constructivos y planillas 
+                            necesarias para la construcción.
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <Card Class="service-card h-100 animate-on-scroll">
+                    <CardBody Class="text-center p-4">
+                        <div class="service-icon">
+                            <Icon Name="IconName.Tools" Size="IconSize.x6" />
+                        </div>
+                        <CardTitle Class="service-title">03. Dirección de Obra</CardTitle>
+                        <CardText Class="service-description">
+                            Supervisión y control técnico del proceso constructivo, garantizando 
+                            la calidad de los materiales, procesos y el cumplimiento de los 
+                            plazos establecidos.
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+                <Card Class="service-card h-100 animate-on-scroll">
+                    <CardBody Class="text-center p-4">
+                        <div class="service-icon">
+                            <Icon Name="IconName.Gear" Size="IconSize.x6" />
+                        </div>
+                        <CardTitle Class="service-title">04. Gerenciamiento</CardTitle>
+                        <CardText Class="service-description">
+                            Gestión integral del proyecto: administración de recursos, 
+                            control de presupuestos, cronogramas de trabajo y coordinación 
+                            con todos los proveedores.
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="proyectos" class="featured-projects-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <p class="section-subtitle">
+                        Una selección de nuestros trabajos más representativos, 
+                        donde cada proyecto cuenta una historia única de diseño y funcionalidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <Card Class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="card-img-top project-image" 
+                             alt="Casa Familiar Moderna" />
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <Badge Color="BadgeColor.Light" Class="project-category">Residencial</Badge>
+                                <h5 class="project-title text-white">Casa Familiar Moderna</h5>
+                                <p class="project-location text-white-50">
+                                    <Icon Name="IconName.GeoAlt" class="me-1" />
+                                    Andris, Santiago
+                                </p>
+                            </div>
+                            <div class="project-actions">
+                                <Button Color="ButtonColor.Light" Size="ButtonSize.Small" Class="me-2">
+                                    <Icon Name="IconName.Eye" />
+                                </Button>
+                                <Button Color="ButtonColor.Primary" Size="ButtonSize.Small">
+                                    <Icon Name="IconName.ArrowRight" />
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <CardBody>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">250 m² • 2023</small>
+                            <div class="project-tags">
+                                <Badge Color="BadgeColor.Secondary" Class="me-1">Moderno</Badge>
+                                <Badge Color="BadgeColor.Success">Ejecutado</Badge>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <Card Class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="card-img-top project-image" 
+                             alt="Oficinas Corporativas" />
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <Badge Color="BadgeColor.Light" Class="project-category">Comercial</Badge>
+                                <h5 class="project-title text-white">Oficinas Corporativas</h5>
+                                <p class="project-location text-white-50">
+                                    <Icon Name="IconName.GeoAlt" class="me-1" />
+                                    Santo Domingo
+                                </p>
+                            </div>
+                            <div class="project-actions">
+                                <Button Color="ButtonColor.Light" Size="ButtonSize.Small" Class="me-2">
+                                    <Icon Name="IconName.Eye" />
+                                </Button>
+                                <Button Color="ButtonColor.Primary" Size="ButtonSize.Small">
+                                    <Icon Name="IconName.ArrowRight" />
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <CardBody>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">180 m² • 2023</small>
+                            <div class="project-tags">
+                                <Badge Color="BadgeColor.Secondary" Class="me-1">Minimalista</Badge>
+                                <Badge Color="BadgeColor.Warning">En Obra</Badge>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <Card Class="project-card animate-on-scroll">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="card-img-top project-image" 
+                             alt="Villa Contemporánea" />
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <Badge Color="BadgeColor.Light" Class="project-category">Residencial</Badge>
+                                <h5 class="project-title text-white">Villa Contemporánea</h5>
+                                <p class="project-location text-white-50">
+                                    <Icon Name="IconName.GeoAlt" class="me-1" />
+                                    Santiago, RD
+                                </p>
+                            </div>
+                            <div class="project-actions">
+                                <Button Color="ButtonColor.Light" Size="ButtonSize.Small" Class="me-2">
+                                    <Icon Name="IconName.Eye" />
+                                </Button>
+                                <Button Color="ButtonColor.Primary" Size="ButtonSize.Small">
+                                    <Icon Name="IconName.ArrowRight" />
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                    <CardBody>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">320 m² • 2024</small>
+                            <div class="project-tags">
+                                <Badge Color="BadgeColor.Secondary" Class="me-1">Lujo</Badge>
+                                <Badge Color="BadgeColor.Info">Propuesta</Badge>
+                            </div>
+                        </div>
+                    </CardBody>
+                </Card>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <Button Color="ButtonColor.Secondary" 
+                        Size="ButtonSize.Large" 
+                        Class="view-all-btn animate-on-scroll">
+                    Ver Todos los Proyectos
+                    <Icon Name="IconName.ArrowRight" class="ms-2" />
+                </Button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 @code {
-    protected override  async Task OnAfterRenderAsync(bool firstRender)
+    private string[] palabras = { "acogedores", "funcionales", "que inspiran", "únicos", "sostenibles" };
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
-            await JSRuntime.InvokeVoidAsync("initializeAnimations");
+        {
+            try
+            {
+                await JSRuntime.InvokeVoidAsync("initializeLayout");
+                await Task.Delay(500); // Esperar para que el DOM se estabilice
+                await JSRuntime.InvokeVoidAsync("initializeAnimations");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inicializando componentes: {ex.Message}");
+            }
+        }
     }
 
     private async Task ScrollToProyectos()
     {
-        await JSRuntime.InvokeVoidAsync("scrollToElement", "proyectos");
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("scrollToElement", "proyectos");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error navegando a proyectos: {ex.Message}");
+        }
     }
 
     private async Task ScrollToContacto()
     {
-        await JSRuntime.InvokeVoidAsync("scrollToElement", "contacto");
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("scrollToElement", "contacto");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error navegando a contacto: {ex.Message}");
+        }
     }
 
     private async Task ScrollToServicios()
     {
-        await JSRuntime.InvokeVoidAsync("scrollToElement", "servicios");
+        try
+        {
+            await JSRuntime.InvokeVoidAsync("scrollToElement", "servicios");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error navegando a servicios: {ex.Message}");
+        }
+    }
+
+    private async Task ContactarWhatsApp()
+    {
+        try
+        {
+            var mensaje = Uri.EscapeDataString("Hola, me interesa conocer más sobre sus servicios de arquitectura.");
+            var url = $"https://wa.me/18095551234?text={mensaje}";
+            await JSRuntime.InvokeVoidAsync("open", url, "_blank");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error abriendo WhatsApp: {ex.Message}");
+        }
+    }
+
+    private async Task ContactarEmail()
+    {
+        try
+        {
+            var subject = Uri.EscapeDataString("Consulta sobre servicios de arquitectura");
+            var body = Uri.EscapeDataString("Hola,\n\nMe interesa conocer más sobre sus servicios de arquitectura.\n\nSaludos.");
+            var url = $"mailto:contacto@estudioarquitectura.com?subject={subject}&body={body}";
+            await JSRuntime.InvokeVoidAsync("open", url, "_self");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error abriendo email: {ex.Message}");
+        }
     }
 }

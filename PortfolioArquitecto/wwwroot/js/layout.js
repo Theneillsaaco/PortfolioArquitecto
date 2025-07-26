@@ -198,6 +198,4 @@ window.scrollToElement = (elementId) => {
     }
 };
 
-window.initializeAnimations = () => {
-    initializeAnimations();
-};
+window.initializeAnimations = initializeAnimations;
