@@ -1,6 +1,71 @@
 ﻿@page "/"
-<h3>Index</h3>
+@using System.Drawing
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Inicio - Estudio de Arquitectura</PageTitle>
+
+<section class="hero-section">
+    <div class="hero-overlay" />
+    <div class="hero-content">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="hero-text animate-on-scroll">
+                    <h1 class="hero-title">
+                        Diseñamos espacios que
+                        <span class="text-accent">inspiran</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Estudio de arquitectura especializado en viviendas unifamiliares 
+                        y proyectos comerciales, con más de 8 años creando espacios únicos 
+                        que reflejan la personalidad de nuestros clientes.
+                    </p>
+                    <div class="hero-buttons">
+                        <Button Color="ButtonColor.Primary"
+                                Size="ButtonSize.Large"
+                                Class="hero-btn-primary me-3"
+                                @onclick="ScrollToProyectos">
+                            <Icon Name="IconName.Grid3X3Gap" class="me-2" />
+                            Ver Proyectos
+                        </Button>
+                        <Button Color="ButtonColor.Secondary"
+                                Size="ButtonSize.Large"
+                                Class="hero-btn-secondary"
+                                @onclick="ScrollToContacto">
+                            <Icon Name="IconName.Envelope" class="me-2" />
+                            Contactar
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-arrow" @onclick="ScrollToServicios">
+            <Icon Name="IconName.ChevronDown" />
+        </div>
+    </div>
+</section>
 
 @code {
-    
+    protected override  async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await JSRuntime.InvokeVoidAsync("initializeAnimations");
+    }
+
+    private async Task ScrollToProyectos()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", "proyectos");
+    }
+
+    private async Task ScrollToContacto()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", "contacto");
+    }
+
+    private async Task ScrollToServicios()
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToElement", "servicios");
+    }
 }

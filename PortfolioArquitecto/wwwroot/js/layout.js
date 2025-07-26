@@ -186,3 +186,18 @@ window.disposeLayout = () => {
     }
     console.log('Layout disposed correctamente');
 };
+
+window.scrollToElement = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+        const offsetTop = element.offsetTop - 80;
+        window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+        });
+    }
+};
+
+window.initializeAnimations = () => {
+    initializeAnimations();
+};
