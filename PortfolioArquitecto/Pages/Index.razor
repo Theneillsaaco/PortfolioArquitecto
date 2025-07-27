@@ -257,15 +257,13 @@
             </div>
         </div>
         
-        <div class="row mt-5">
-            <div class="col-12 text-center">
-                <Button Color="ButtonColor.Secondary" 
-                        Size="ButtonSize.Large" 
-                        Class="view-all-btn animate-on-scroll">
-                    Ver Todos los Proyectos
-                    <Icon Name="IconName.ArrowRight" class="ms-2" />
-                </Button>
-            </div>
+        <div class="view-all-section">
+            <Button Color="ButtonColor.Primary" 
+                    Size="ButtonSize.Large" 
+                    Class="view-all-btn animate-on-scroll">
+                Ver Todos los Proyectos
+                <Icon Name="IconName.ArrowRight" class="ms-2" />
+            </Button>
         </div>
     </div>
 </section>
@@ -324,35 +322,6 @@
         catch (Exception ex)
         {
             Console.WriteLine($"Error navegando a servicios: {ex.Message}");
-        }
-    }
-
-    private async Task ContactarWhatsApp()
-    {
-        try
-        {
-            var mensaje = Uri.EscapeDataString("Hola, me interesa conocer más sobre sus servicios de arquitectura.");
-            var url = $"https://wa.me/18095551234?text={mensaje}";
-            await JSRuntime.InvokeVoidAsync("open", url, "_blank");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error abriendo WhatsApp: {ex.Message}");
-        }
-    }
-
-    private async Task ContactarEmail()
-    {
-        try
-        {
-            var subject = Uri.EscapeDataString("Consulta sobre servicios de arquitectura");
-            var body = Uri.EscapeDataString("Hola,\n\nMe interesa conocer más sobre sus servicios de arquitectura.\n\nSaludos.");
-            var url = $"mailto:contacto@estudioarquitectura.com?subject={subject}&body={body}";
-            await JSRuntime.InvokeVoidAsync("open", url, "_self");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error abriendo email: {ex.Message}");
         }
     }
 }

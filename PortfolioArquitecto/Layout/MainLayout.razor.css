@@ -138,9 +138,14 @@
 /* ==========================================
    CONTENIDO PRINCIPAL
    ========================================== */
-.main-content {
+.main-content.stable-layout {
     flex: 1;
     padding-top: var(--navbar-height);
+    min-height: 100vh;
+    overflow-x: hidden;
+    contain: layout style;
+    transform: translateZ(0);
+    will-change: auto;
 }
 
 /* ==========================================
