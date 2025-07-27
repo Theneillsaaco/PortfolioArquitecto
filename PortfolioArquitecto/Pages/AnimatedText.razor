@@ -1,47 +1,101 @@
-﻿<span class="text-accent">@displayedText<span class="cursor">|</span></span>
+﻿@inherits ComponentBase
+@implements IDisposable
+
+<div class="typewriter-container">
+    <span class="typewriter-text">@displayedText</span>
+    <span class="cursor @(showCursor ? "visible" : "")">|</span>
+</div>
 
 @code {
-    [Parameter] public string[] Words { get; set; } = new[] { "inspiran", "hermosos" };
+    [Parameter] public string[] Words { get; set; } = new[] { "inspiran", "hermosos", "creativos", "únicos" };
+    [Parameter] public int TypeSpeed { get; set; } = 120;
+    [Parameter] public int DeleteSpeed { get; set; } = 80;
+    [Parameter] public int PauseDuration { get; set; } = 2000;
+    [Parameter] public int InitialDelay { get; set; } = 500;
 
     private int currentWordIndex = 0;
     private string displayedText = "";
     private int charIndex = 0;
     private bool isDeleting = false;
+    private bool showCursor = true;
+    private Timer? animationTimer;
+    private Timer? cursorTimer;
+    private bool isAnimating = false;
 
     protected override async Task OnInitializedAsync()
     {
-        while (true)
+       
+        StartCursorAnimation();
+        await Task.Delay(InitialDelay);
+        StartTypewriterAnimation();
+    }
+
+    private void StartCursorAnimation()
+    {
+        cursorTimer = new Timer(async _ =>
         {
-            if (!isDeleting)
+            showCursor = !showCursor;
+            await InvokeAsync(StateHasChanged);
+        }, null, 0, 530);
+    }
+
+    private void StartTypewriterAnimation()
+    {
+        isAnimating = true;
+        ScheduleNextStep();
+    }
+
+    private void ScheduleNextStep()
+    {
+        if (!isAnimating) return;
+
+        int delay;
+        
+        if (!isDeleting)
+        {
+            if (charIndex < Words[currentWordIndex].Length)
             {
-                if (charIndex < Words[currentWordIndex].Length)
-                {
-                    displayedText += Words[currentWordIndex][charIndex];
-                    charIndex++;
-                    await Task.Delay(150);
-                }
-                else
-                {
-                    await Task.Delay(2000);
-                    isDeleting = true;
-                }
+                displayedText += Words[currentWordIndex][charIndex];
+                charIndex++;
+                delay = TypeSpeed + Random.Shared.Next(-20, 30);
             }
             else
             {
-                if (charIndex > 0)
-                {
-                    displayedText = displayedText.Substring(0, charIndex - 1);
-                    charIndex--;
-                    await Task.Delay(100);
-                }
-                else
-                {
-                    isDeleting = false;
-                    currentWordIndex = (currentWordIndex + 1) % Words.Length;
-                }
+                isDeleting = true;
+                delay = PauseDuration;
             }
-            
-            StateHasChanged();
         }
+        else
+        {
+            if (charIndex > 0)
+            {
+                displayedText = displayedText[..^1];
+                charIndex--;
+                delay = DeleteSpeed + Random.Shared.Next(-10, 15);
+            }
+            else
+            {
+                isDeleting = false;
+                currentWordIndex = (currentWordIndex + 1) % Words.Length;
+                delay = 200;
+            }
+        }
+
+        animationTimer?.Dispose();
+        animationTimer = new Timer(async _ =>
+        {
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+                ScheduleNextStep();
+            });
+        }, null, delay, Timeout.Infinite);
+    }
+
+    public void Dispose()
+    {
+        isAnimating = false;
+        animationTimer?.Dispose();
+        cursorTimer?.Dispose();
     }
 }

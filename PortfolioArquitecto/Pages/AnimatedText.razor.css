@@ -1,0 +1,19 @@
+﻿.typewriter-container {
+    display: inline-flex;
+    align-items: center;
+}
+
+.typewriter-text {
+    color: #667eea;
+}
+
+.cursor {
+    color: #667eea;
+    margin-left: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.cursor.visible {
+    opacity: 1;
+}
