@@ -859,7 +859,7 @@
 .cta-subtitle {
     font-size: 1.3rem;
     margin-bottom: 3rem;
-    color: rgba(248, 245, 240, 0.95);
+    color: var(--text-dark);
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -875,14 +875,14 @@
 }
 
 ::deep .cta-buttons .btn-primary {
-    background: linear-gradient(135deg,
-    var(--gold-accent),
-    var(--brown-medium)) !important;
+    background: linear-gradient(135deg, var(--gold-accent), var(--brown-medium)) !important;
     border: none !important;
+    color: var(--green-medium) !important;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
     transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(107, 142, 107, 0.3);
 }
 
 ::deep .cta-buttons .btn-primary:hover {
@@ -893,7 +893,7 @@
 ::deep .cta-btn-secondary {
     background: linear-gradient(135deg, #25D366, #128C7E) !important;
     border: none !important;
-    color: white !important;
+    color: var(--green-medium) !important;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
