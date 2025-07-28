@@ -191,7 +191,7 @@
     border-color: var(--cream-light) !important;
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator - Arreglado para móviles */
 .scroll-indicator {
     position: absolute;
     bottom: 3rem;
@@ -221,6 +221,68 @@
     filter: drop-shadow(0 5px 12px rgba(212, 175, 55, 0.4))
     drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Arreglar scroll-indicator en móviles */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: 1.5rem; /* Subir más arriba en móviles */
+    }
+
+    .scroll-arrow {
+        font-size: 2rem; /* Hacer más pequeño en móviles */
+    }
+}
+
+@media (max-width: 576px) {
+    .scroll-indicator {
+        bottom: 1rem; /* Aún más arriba en pantallas muy pequeñas */
+    }
+
+    .scroll-arrow {
+        font-size: 1.8rem;
+    }
+}
+
+/* Layout de contacto con imagen circular pequeña */
+.contact-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-image-small {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+.rounded-circle-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--green-medium);
+    box-shadow: 0 8px 25px rgba(107, 142, 107, 0.3);
+    transition: var(--transition);
+}
+
+.contact-image-small:hover .rounded-circle-image {
+    transform: scale(1.1);
+    border-color: var(--gold-accent);
+    box-shadow: 0 12px 35px rgba(218, 165, 32, 0.4);
+}
+
+.contact-layout .contact-methods {
+    flex: 1;
+    margin: 0;
+}
+
+.contact-layout .contact-method {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
 }
 
 /* ==========================================
@@ -1401,7 +1463,7 @@
     }
 }
 
-/* Tablets */
+/* Tablets - Layout responsive para contacto */
 @media (max-width: 992px) {
     .feature-item {
         margin-bottom: 2rem;
@@ -1439,9 +1501,24 @@
         height: 400px;
         margin-bottom: 3rem;
     }
+
+    /* Layout de contacto en tablets */
+    .contact-layout {
+        gap: 1.5rem;
+    }
+
+    .contact-image-small {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rounded-circle-image {
+        width: 100px;
+        height: 100px;
+    }
 }
 
-/* Small tablets */
+/* Small tablets - Layout vertical para contacto */
 @media (max-width: 768px) {
     .feature-item {
         flex-direction: column;
@@ -1488,9 +1565,38 @@
         padding: 4rem 0;
         margin: 2rem 0;
     }
+
+    /* Layout vertical en móviles */
+    .contact-layout {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .contact-image-small {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rounded-circle-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-layout .contact-method {
+        flex-direction: row;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .contact-layout .contact-icon {
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
 }
 
-/* Mobile phones */
+/* Mobile phones - Ajustes finales */
 @media (max-width: 576px) {
     .feature-item,
     .contact-method {
@@ -1552,6 +1658,27 @@
 
     .cta-title {
         font-size: 2.2rem;
+    }
+
+    /* Imagen circular más pequeña en móviles */
+    .contact-image-small {
+        width: 80px;
+        height: 80px;
+    }
+
+    .rounded-circle-image {
+        width: 80px;
+        height: 80px;
+        border-width: 3px;
+    }
+
+    .contact-layout {
+        gap: 1.5rem;
+    }
+
+    .contact-layout .contact-method {
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 }
 
