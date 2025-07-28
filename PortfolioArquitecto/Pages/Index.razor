@@ -448,14 +448,14 @@
                     <div class="cta-buttons">
                         <Button Color="ButtonColor.Primary"
                                 Size="ButtonSize.Large"
-                                Class="cta-btn-primary"
+                                Class="cta-btn-instagram"
                                 @onclick="ScrollToContacto">
                             <Icon Name="IconName.Instagram" Class="me-2" />
                             Instagram
                         </Button>
                         <Button Color="ButtonColor.Primary"
                                 Size="ButtonSize.Large"
-                                Class="cta-btn-secondary"
+                                Class="cta-btn-whatsapp"
                                 @onclick="ScrollToContacto">
                             <Icon Name="IconName.Whatsapp" Class="me-2"/>
                             WhatsApp
@@ -466,25 +466,25 @@
                         <div class="row text-center">
                             <div class="col-md-3 col-6">
                                 <div class="stat-item animate-on-scroll" style="animation-delay: 0.1s">
-                                    <span class="stat-number" data-bs-target="50">0</span>
+                                    <span class="stat-number" data-target="50" id="stat1">0</span>
                                     <p class="stat-label">Proyectos Completados</p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
                                 <div class="stat-item animate-on-scroll" style="animation-delay: 0.2s">
-                                    <span class="stat-number" data-bs-target="3">0</span>
+                                    <span class="stat-number" data-target="3" id="stat2">0</span>
                                     <p class="stat-label">Años de Experiencia</p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
                                 <div class="stat-item animate-on-scroll" style="animation-delay: 0.3s">
-                                    <span class="stat-number" data-bs-target="98">0</span>
+                                    <span class="stat-number" data-target="98" id="stat3">0</span>
                                     <p class="stat-label">% Satisfacción</p>
                                 </div>
                             </div>
                             <div class="col-md-3 col-6">
                                 <div class="stat-item animate-on-scroll" style="animation-delay: 0.4s">
-                                    <span class="stat-number" data-bs-target="15">0</span>
+                                    <span class="stat-number" data-target="15" id="stat4">0</span>
                                     <p class="stat-label">Premios Recibidos</p>
                                 </div>
                             </div>
@@ -506,6 +506,17 @@
                         Estamos aqui para escuchar tus ideas y convertirlas en realidad.
                         Contacta con nosotros y comencemos a diseñar juntos.
                     </p>
+                    <div class="contact-image animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                             class="img-fluid rounded-image" 
+                             alt="Arquitecto profesional" />
+                        <div class="contact-image-overlay">
+                            <div class="overlay-content">
+                                <Icon Name="IconName.PersonFill" Size="IconSize.x6" />
+                                <p>Conoce nuestro equipo</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="contact-methods">
                         <div class="contact-method animate-on-scroll" style="animation-delay: 0.1s">
                             <div class="contact-icon">
@@ -567,6 +578,7 @@
                 await JSRuntime.InvokeVoidAsync("initializeLayout");
                 await Task.Delay(500);
                 await JSRuntime.InvokeVoidAsync("initializeAnimations");
+                await JSRuntime.InvokeVoidAsync("initializeCounters");
             }
             catch (Exception ex)
             {

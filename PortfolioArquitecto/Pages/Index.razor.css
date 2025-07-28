@@ -816,9 +816,8 @@
     margin-bottom: 0.3rem;
 }
 
-
 /* ==========================================
-   CALL TO ACTION SECTION - BOTÓN WHATSAPP Y STATS CORREGIDOS
+   CALL TO ACTION SECTION - BOTONES ARREGLADOS Y ESPACIO REDUCIDO
    ========================================== */
 .cta-section {
     background: linear-gradient(135deg,
@@ -867,51 +866,89 @@
 }
 
 .cta-buttons {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem; /* Reducido de 4rem a 2rem */
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem; /* Reducido de 1.5rem a 1rem */
     justify-content: center;
     flex-wrap: wrap;
 }
 
-::deep .cta-buttons .btn-primary {
-    background: linear-gradient(135deg, var(--gold-accent), var(--brown-medium)) !important;
+/* Botón Instagram con colores de Instagram */
+::deep .cta-btn-instagram {
+    background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80) !important;
     border: none !important;
-    color: var(--green-medium) !important;
+    color: white !important;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
     transition: var(--transition);
-    box-shadow: 0 8px 25px rgba(107, 142, 107, 0.3);
+    box-shadow: 0 8px 25px rgba(225, 48, 108, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-::deep .cta-buttons .btn-primary:hover {
+::deep .cta-btn-instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+}
+
+::deep .cta-btn-instagram:hover::before {
+    left: 100%;
+}
+
+::deep .cta-btn-instagram:hover {
+    background: linear-gradient(135deg, #833AB4, #C13584, #E1306C, #FD1D1D) !important;
+    color: white !important;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(218, 165, 32, 0.4);
+    box-shadow: 0 15px 40px rgba(225, 48, 108, 0.5);
 }
 
-::deep .cta-btn-secondary {
+/* Botón WhatsApp con colores de WhatsApp */
+::deep .cta-btn-whatsapp {
     background: linear-gradient(135deg, #25D366, #128C7E) !important;
     border: none !important;
-    color: var(--green-medium) !important;
+    color: white !important;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
     transition: var(--transition);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-::deep .cta-btn-secondary:hover {
+::deep .cta-btn-whatsapp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s;
+}
+
+::deep .cta-btn-whatsapp:hover::before {
+    left: 100%;
+}
+
+::deep .cta-btn-whatsapp:hover {
     background: linear-gradient(135deg, #128C7E, #075E54) !important;
     color: white !important;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
 }
 
-/* Stats - Texto corregido */
+/* Stats - Animación de números arreglada */
 .stats-row {
     border-top: 2px solid rgba(248, 245, 240, 0.2);
-    padding-top: 4rem;
+    padding-top: 2rem; /* Reducido de 4rem a 2rem */
     position: relative;
 }
 
@@ -940,7 +977,6 @@
     margin-bottom: 0.8rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     display: block;
-    animation: countUp 2s ease-out;
 }
 
 .stat-label {
@@ -953,7 +989,7 @@
 }
 
 /* ==========================================
-   CONTACT PREVIEW SECTION - CON IMAGEN DE PORTADA
+   CONTACT PREVIEW SECTION - CON IMAGEN DE PORTADA AGREGADA
    ========================================== */
 .contact-preview-section {
     background: var(--background-light);

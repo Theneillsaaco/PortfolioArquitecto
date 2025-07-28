@@ -198,4 +198,57 @@ window.scrollToElement = (elementId) => {
     }
 };
 
+window.initializeCounters = () => {
+    const animateCounter = (counter) => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 1000;
+        const startTime = performance.now();
+        const startValue = 0;
+
+        const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+
+            const currentValue = Math.floor(startValue + (target - startValue) * easeOutQuart);
+            counter.textContent = currentValue;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+
+        requestAnimationFrame(updateCounter);
+    };
+
+    const statsSection = document.querySelector('.stats-row');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = document.querySelectorAll('.stat-number');
+
+                    counters.forEach((counter, index) => {
+                        counter.textContent = '0';
+
+                        setTimeout(() => {
+                            animateCounter(counter);
+                        }, index * 200);
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.4
+        });
+
+        observer.observe(statsSection);
+    }
+};
+
+
 window.initializeAnimations = initializeAnimations;
