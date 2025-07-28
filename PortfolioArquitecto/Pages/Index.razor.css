@@ -847,14 +847,14 @@
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 2rem;
-    color: var(--text-light);
+    color: var(--text-dark);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta-subtitle {
     font-size: 1.3rem;
     margin-bottom: 3rem;
-    color: rgba(248, 245, 240, 0.95);
+    color: #3f3223;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -888,7 +888,7 @@
 ::deep .cta-btn-secondary {
     background: transparent !important;
     border: 3px solid var(--cream-light) !important;
-    color: var(--text-light) !important;
+    color: var(--green-medium) !important;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
@@ -1003,7 +1003,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--green-medium);
     margin-right: 1.5rem;
     font-size: 1.3rem;
     transition: var(--transition);
@@ -1039,7 +1039,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--green-medium);
     text-decoration: none;
     transition: var(--transition);
     font-size: 1.2rem;
