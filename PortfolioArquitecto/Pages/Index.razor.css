@@ -1,49 +1,43 @@
 ﻿/* ==========================================
-   VARIABLES MODERNAS
+   PALETA PERSONALIZADA - CREMA, VERDE Y MARRÓN
    ========================================== */
 :root {
     /* Colores principales */
-    --primary-color: #2563eb;
-    --primary-dark: #1d4ed8;
-    --primary-light: #3b82f6;
+    --primary-color: #4b7d49; /* verde musgo */
+    --primary-dark: #355e35;
+    --primary-light: #7fa378;
 
     /* Colores secundarios */
-    --secondary-color: #64748b;
-    --accent-color: #f59e0b;
-    --accent-hover: #d97706;
+    --secondary-color: #8b5e3c; /* marrón medio */
+    --accent-color: #b38b59; /* marrón claro */
+    --accent-hover: #a47844;
 
-    /* Grises modernos */
-    --gray-50: #f8fafc;
-    --gray-100: #f1f5f9;
-    --gray-200: #e2e8f0;
-    --gray-300: #cbd5e1;
-    --gray-400: #94a3b8;
-    --gray-500: #64748b;
-    --gray-600: #475569;
-    --gray-700: #334155;
-    --gray-800: #1e293b;
-    --gray-900: #0f172a;
+    /* Fondo crema */
+    --gray-50: #fdfaf5;
+    --gray-100: #f8f3ea;
+    --gray-200: #eee6d9;
+    --gray-300: #e0d6c4;
+    --gray-400: #bfae99;
+    --gray-500: #a38f79;
+    --gray-600: #8a7865;
+    --gray-700: #6f5f50;
+    --gray-800: #4d3f33;
+    --gray-900: #2e261f;
 
-    /* Sistema de tipografía */
+    /* Tipografía y otros conservan valores anteriores */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-    /* Espaciado y dimensiones */
     --container-padding: 1.5rem;
     --section-padding: 7rem 0;
     --border-radius: 12px;
     --border-radius-lg: 20px;
     --border-radius-xl: 24px;
-
-    /* Sombras modernas */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-
-    /* Transiciones */
     --transition-fast: 0.15s ease;
     --transition: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -62,8 +56,13 @@
 body {
     font-family: var(--font-primary);
     line-height: 1.6;
-    color: var(--gray-700);
+    background-color: var(--gray-50);
+    color: var(--gray-800);
     overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--gray-900);
 }
 
 /* ==========================================
@@ -210,7 +209,6 @@ body {
 /* Botones modernos */
 ::deep .btn-primary-modern {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
-    border: none !important;
     color: white !important;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
@@ -242,9 +240,9 @@ body {
 }
 
 ::deep .btn-secondary-modern {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: var(--gray-200) !important;
     border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
+    color: var(--gray-800) !important;
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
     font-weight: 600;
