@@ -243,7 +243,7 @@ window.initializeCounters = () => {
                 }
             });
         }, {
-            threshold: 0.4
+            threshold: 0.7
         });
 
         observer.observe(statsSection);
