@@ -3,134 +3,161 @@
 
 <PageTitle>Arquitecto - Portfolio Personal</PageTitle>
 
-<section class="hero-section">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-12 text-center">
-                    <div class="hero-text animate-on-scroll">
-                        <div class="hero-profile-image mb-4">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" 
-                                 class="profile-hero-img" 
-                                 alt="Arquitecto" />
+<section class="hero-modern">
+    <div class="hero-bg-overlay" />
+    <div class="container-fluid h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-lg-6 hero-content-left">
+                <div class="hero-text-modern">
+                    <div class="greeting-badge">
+                        <span class="greeting-icon">👋</span>
+                        <span>Hola, soy</span>
+                    </div>
+                    <h1 class="hero-name">
+                        Andrys
+                        <span class="surname">Santana</span>
+                    </h1>
+                    <div class="role-container">
+                        <span class="role-title">Arquitecto</span>
+                        <span class="role-divider">•</span>
+                        <span class="role-title">Diseñador</span>
+                    </div>
+                    <p class="hero-description">
+                        Creo espacios que cuentan historias y conectan emociones.
+                        Con más de 3 años transformando ideas en realidades arquitectónicas únicas.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">45+</span>
+                            <span class="stat-label">Proyectos</span>
                         </div>
-                        <h1 class="hero-title">
-                            Hola, soy <span class="text-accent">Alejandro Martínez</span>
-                        </h1>
-                        <h2 class="hero-subtitle-role">
-                            Arquitecto & Diseñador
-                        </h2>
-                        <p class="hero-subtitle">
-                            Transformo ideas en espacios que cuentan historias. Con más de 8 años 
-                            creando arquitectura que conecta con las emociones y necesidades humanas, 
-                            cada proyecto es una nueva aventura de diseño y creatividad.
-                        </p>
-                        <div class="hero-buttons">
-                            <Button Color="ButtonColor.Primary"
-                                    Size="ButtonSize.Large"
-                                    Class="hero-btn-primary me-3"
-                                    @onclick="ScrollToProyectos">
-                                <Icon Name="IconName.Grid3X3Gap" class="me-2" />
-                                Ver Mi Trabajo
-                            </Button>
-                            <Button Color="ButtonColor.Primary"
-                                    Size="ButtonSize.Large"
-                                    Class="hero-btn-primary me-3"
-                                    @onclick="ScrollToSobreMi">
-                                <Icon Name="IconName.Person" class="me-2" />
-                                Conoce Mi Historia
-                            </Button>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Años</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15</span>
+                            <span class="stat-label">Premios</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <Button Color="ButtonColor.Primary"
+                                Size="ButtonSize.Large"
+                                Class="btn-primary-modern me-3"
+                                @onclick="ScrollToProyectos">
+                            <Icon Name="IconName.Grid3X3Gap" class="me-2" />
+                            Ver Mi Trabajo
+                        </Button>
+                        <Button Color="ButtonColor.Primary"
+                                Size="ButtonSize.Large"
+                                Class="btn-secondary-modern"
+                                @onclick="ScrollToContacto">
+                            <Icon Name="IconName.ChatDots" class="me-2" />
+                            Contactar
+                        </Button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 hero-visual">
+                <div class="hero-image-container">
+                    <div class="floating-card card-1">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="Proyecto 1" class="project-thumb" />
+                        <div class="card-info">
+                            <span class="project-name">Casa Los Alanis</span>
+                            <span class="project-year">2023</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                             alt="Proyecto 2" class="project-thumb" />
+                        <div class="card-info">
+                            <span class="project-name">Oficinas Bambú</span>
+                            <span class="project-year">2022</span>
+                        </div>
+                    </div>
+                    <div class="main-portrait">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Alejandro Martínez" class="portrait-img" />
+                        <div class="experience-badge-hero">
+                            <span class="badge-number">3+</span>
+                            <span class="badge-text">Años</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="scroll-indicator">
-        <div class="scroll-arrow" @onclick="ScrollToSobreMi">
-            <Icon Name="IconName.ChevronDown" />
+
+    <div class="scroll-indicator-modern" @onclick="ScrollToSobreMi">
+        <div class="mouse-scroll">
+            <div class="scroll-wheel" />
         </div>
+        <span class="scroll-text">Scroll</span>
     </div>
 </section>
 
-<section id="sobre-mi" class="about-section">
+<section id="sobre-mi" class="about-modern">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <div class="about-image-container animate-on-scroll">
-                    <div class="about-main-image">
+                <div class="about-visual-modern">
+                    <div class="about-image-main">
                         <img src="https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                             class="img-fluid rounded-image main-about-img"
-                             alt="Alejandro en su estudio" />
+                             alt="Alejandro en su estudio" class="img-fluid rounded-image main-about-img" />
                     </div>
-                    <div class="about-secondary-image">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-                             class="img-fluid rounded-image secondary-about-img"
-                             alt="Trabajando en planos" />
-                    </div>
-                    <div class="experience-badge">
-                        <div class="badge-content">
-                            <span class="experience-number">8+</span>
-                            <span class="experience-text">Años de<br>Experiencia</span>
-                        </div>
+                    <div class="about-decorative-elements">
+                        <div class="element-1" />
+                        <div class="element-2" />
+                        <div class="element-3" />
                     </div>
                 </div>
             </div>
             
             <div class="col-lg-7">
-                <div class="about-content animate-on-scroll">
-                    <h2 class="section-title text-start mb-4">Mi Filosofía de Diseño</h2>
-                    
-                    <div class="philosophy-quote mb-4">
-                        <blockquote>
-                            "Creo que la arquitectura debe ser más que estructuras bonitas. 
-                            Debe contar historias, evocar emociones y crear conexiones genuinas 
-                            entre las personas y los espacios que habitan."
-                        </blockquote>
+                <div class="about-content-modern">
+                    <div class="section-badge">
+                        <Icon Name="IconName.Person" class="me-2" />
+                        Sobre mi
                     </div>
+                    <h2 class="section-title-modern">
+                        Transformando ideas en
+                        <span class="highlight">espacios unicos</span>
+                    </h2>
 
-                    <p class="about-text mb-4">
-                        Mi viaje en la arquitectura comenzó con una fascinación por cómo los espacios 
-                        pueden transformar la forma en que vivimos, trabajamos y nos relacionamos. 
-                        Nacido y criado en Santiago, República Dominicana, he tenido la fortuna de 
-                        trabajar en proyectos que van desde íntimas casas familiares hasta complejos 
-                        comerciales que definen el paisaje urbano.
+                    <p class="section-description">
+                        Mi pasión por la arquitectura nació de la fascinación por cómo los espacios
+                        pueden transformar vidas. Desde Santiago, República Dominicana, he desarrollado
+                        una filosofía de diseño que combina funcionalidad inteligente, belleza atemporal
+                        y sostenibilidad responsable.
                     </p>
-
-                    <p class="about-text mb-4">
-                        Mi enfoque se basa en tres pilares fundamentales: la funcionalidad inteligente, 
-                        la belleza atemporal y la sostenibilidad responsable. Cada proyecto es una 
-                        oportunidad para crear algo único que refleje la personalidad y sueños de 
-                        mis clientes, mientras respeta el contexto cultural y ambiental.
-                    </p>
-
-                    <div class="personal-stats">
-                        <div class="row">
-                            <div class="col-6 col-md-3">
-                                <div class="stat-personal">
-                                    <span class="stat-number-personal">45+</span>
-                                    <span class="stat-label-personal">Proyectos</span>
-                                </div>
+                    <div class="philosophy-points">
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <Icon Name="IconName.Lightbulb" />
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="stat-personal">
-                                    <span class="stat-number-personal">15</span>
-                                    <span class="stat-label-personal">Premios</span>
-                                </div>
+                            <div class="point-content">
+                                <h6>Diseño Inteligente</h6>
+                                <p>Cada espacio debe contar una historia única</p>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="stat-personal">
-                                    <span class="stat-number-personal">3</span>
-                                    <span class="stat-label-personal">Países</span>
-                                </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <Icon Name="IconName.Heart" />
                             </div>
-                            <div class="col-6 col-md-3">
-                                <div class="stat-personal">
-                                    <span class="stat-number-personal">100%</span>
-                                    <span class="stat-label-personal">Pasión</span>
-                                </div>
+                            <div class="point-content">
+                                <h6>Conexión Emocional</h6>
+                                <p>Arquitectura que conecta con las emociones</p>
+                            </div>
+                        </div>
+                        <div class="point-item">
+                            <div class="point-icon">
+                                <Icon Name="IconName.Leaf" />
+                            </div>
+                            <div class="point-content">
+                                <h6>Sostenibilidad</h6>
+                                <p>Respeto por el contexto cultural y ambiental</p>
                             </div>
                         </div>
                     </div>
@@ -140,185 +167,197 @@
     </div>
 </section>
 
-<section class="journey-section">
+<section class="experience-modern">
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title">Mi Trayectoria</h2>
-                    <p class="section-subtitle">
-                        Un recorrido por los momentos que han definido mi carrera profesional
-                    </p>
-                </div>
+        <div class="text-center mb-5">
+            <div class="section-badge">
+                <Icon Name="IconName.Clock" Class="me-2" />
+                Mi Trayectoria
             </div>
+            <h2 class="section-title-modern">
+                Momentos que definen
+                <span class="highlight">mi carrera</span>
+            </h2>
         </div>
-        
-        <div class="timeline">
-            <div class="timeline-item animate-on-scroll" style="animation-delay: 0.1s">
-                <div class="timeline-year">2016</div>
-                <div class="timeline-content">
-                    <h4>Graduación en Arquitectura</h4>
+
+        <div class="timeline-modern">
+            <div class="timeline-item-modern" data-year="2016">
+                <div class="timeline-content-modern">
+                    <div class="timeline-header">
+                        <h4>Graduación en Arquitectura</h4>
+                    </div>
                     <p>Pontificia Universidad Católica Madre y Maestra (PUCMM). Proyecto de tesis: "Vivienda Social Sostenible en el Caribe".</p>
                 </div>
             </div>
-            
-            <div class="timeline-item animate-on-scroll" style="animation-delay: 0.2s">
-                <div class="timeline-year">2017</div>
-                <div class="timeline-content">
-                    <h4>Primer Proyecto Independiente</h4>
+
+            <div class="timeline-item-modern" data-year="2017">
+                <div class="timeline-content-modern">
+                    <div class="timeline-header">
+                        <h4>Primer Proyecto Independiente</h4>
+                    </div>
                     <p>Casa residencial en Santiago que marcó el inicio de mi carrera como arquitecto independiente. Un proyecto que definió mi estilo personal.</p>
                 </div>
             </div>
-            
-            <div class="timeline-item animate-on-scroll" style="animation-delay: 0.3s">
-                <div class="timeline-year">2019</div>
-                <div class="timeline-content">
-                    <h4>Reconocimiento Nacional</h4>
-                    <p>Premio "Joven Arquitecto del Año" por el Colegio Dominicano de Arquitectos. Proyecto destacado: Centro Comunitario en Moca.</p>
+
+            <div class="timeline-item-modern" data-year="2019">
+                <div class="timeline-content-modern">
+                    <div class="timeline-header">
+                        <h4>Reconocimiento Nacional</h4>
+                        <span class="timeline-year">2019</span>
+                    </div>
+                    <p>Premio "Joven Arquitecto del Año" - Centro Comunitario en Moca</p>
                 </div>
             </div>
-            
-            <div class="timeline-item animate-on-scroll" style="animation-delay: 0.4s">
-                <div class="timeline-year">2021</div>
-                <div class="timeline-content">
-                    <h4>Expansión Internacional</h4>
-                    <p>Primer proyecto internacional en Costa Rica. Colaboración con estudios de arquitectura centroamericanos.</p>
+
+            <div class="timeline-item-modern" data-year="2021">
+                <div class="timeline-content-modern">
+                    <div class="timeline-header">
+                        <h4>Expansión Internacional</h4>
+                        <span class="timeline-year">2021</span>
+                    </div>
+                    <p>Primer proyecto en Costa Rica - Colaboración centroamericana</p>
                 </div>
             </div>
-            
-            <div class="timeline-item animate-on-scroll" style="animation-delay: 0.5s">
-                <div class="timeline-year">2024</div>
-                <div class="timeline-content">
-                    <h4>Estudio Consolidado</h4>
-                    <p>Apertura de oficina en Punta Cana y equipo de 5 profesionales. Enfoque en arquitectura turística sostenible.</p>
+
+            <div class="timeline-item-modern" data-year="2024">
+                <div class="timeline-content-modern">
+                    <div class="timeline-header">
+                        <h4>Estudio Consolidado</h4>
+                        <span class="timeline-year">2024</span>
+                    </div>
+                    <p>Oficina en Punta Cana - Equipo de 5 profesionales</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section id="proyectos" class="portfolio-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title">Proyectos Destacados</h2>
-                    <p class="section-subtitle">
-                        Una selección de los trabajos que mejor representan mi visión arquitectónica
-                    </p>
-                </div>
+<section id="proyectos" class="portfolio-modern">
+     <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-badge">
+                <Icon Name="IconName.Grid3X3Gap" class="me-2" />
+                Portfolio
             </div>
+            <h2 class="section-title-modern">
+                Proyectos que definen 
+                <span class="highlight">mi visión</span>
+            </h2>
         </div>
         
-        <div class="portfolio-filter mb-5 text-center animate-on-scroll">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="residential">Residencial</button>
-            <button class="filter-btn" data-filter="commercial">Comercial</button>
-            <button class="filter-btn" data-filter="cultural">Cultural</button>
+        <div class="portfolio-filter-modern mb-5">
+            <button class="filter-btn-modern active" data-filter="all">Todos</button>
+            <button class="filter-btn-modern" data-filter="residential">Residencial</button>
+            <button class="filter-btn-modern" data-filter="commercial">Comercial</button>
+            <button class="filter-btn-modern" data-filter="cultural">Cultural</button>
         </div>
-        
-        <div class="portfolio-grid">
-            <div class="portfolio-item residential animate-on-scroll" style="animation-delay: 0.1s">
-                <div class="portfolio-image-container">
+
+        <div class="portfolio-grid-modern">
+            <div class="portfolio-card-modern residential">
+                <div class="card-image-container">
                     <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         class="portfolio-image" 
-                         alt="Casa Familiar Los Alamos" />
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Residencial</span>
-                            <h3 class="portfolio-title">Casa Familiar Los Álamos</h3>
-                            <p class="portfolio-description">Una vivienda que abraza la naturaleza tropical</p>
-                            <div class="portfolio-details">
-                                <span><Icon Name="IconName.Calendar" /> 2023</span>
-                                <span><Icon Name="IconName.GeoAlt" /> Santiago, RD</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-action">
-                            <Button Color="ButtonColor.Light" Class="view-project-btn">
-                                Ver Proyecto <Icon Name="IconName.ArrowRight" class="ms-2" />
-                            </Button>
-                        </div>
+                         alt="Casa Los Álamos" class="card-image" />
+                    <div class="card-overlay">
+                        <Button Color="ButtonColor.Light" Class="view-btn">
+                            <Icon Name="IconName.Eye" class="me-2" />
+                            Ver Proyecto
+                        </Button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category">Residencial</span>
+                        <span class="year">2023</span>
+                    </div>
+                    <h4 class="project-title">Casa Familiar Los Álamos</h4>
+                    <p class="project-description">Una vivienda que abraza la naturaleza tropical</p>
+                    <div class="project-tags">
+                        <span class="tag">Santiago, RD</span>
+                        <span class="tag">350m²</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="portfolio-item commercial animate-on-scroll" style="animation-delay: 0.2s">
-                <div class="portfolio-image-container">
+
+            <div class="portfolio-card-modern commercial">
+                <div class="card-image-container">
                     <img src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         class="portfolio-image" 
-                         alt="Oficinas Centrales Bambú" />
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Comercial</span>
-                            <h3 class="portfolio-title">Oficinas Centrales Bambú</h3>
-                            <p class="portfolio-description">Arquitectura corporativa con identidad caribeña</p>
-                            <div class="portfolio-details">
-                                <span><Icon Name="IconName.Calendar" /> 2022</span>
-                                <span><Icon Name="IconName.GeoAlt" /> Santo Domingo</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-action">
-                            <Button Color="ButtonColor.Light" Class="view-project-btn">
-                                Ver Proyecto <Icon Name="IconName.ArrowRight" class="ms-2" />
-                            </Button>
-                        </div>
+                         alt="Oficinas Bambú" class="card-image" />
+                    <div class="card-overlay">
+                        <Button Color="ButtonColor.Light" Class="view-btn">
+                            <Icon Name="IconName.Eye" class="me-2" />
+                            Ver Proyecto
+                        </Button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category">Comercial</span>
+                        <span class="year">2022</span>
+                    </div>
+                    <h4 class="project-title">Oficinas Centrales Bambú</h4>
+                    <p class="project-description">Arquitectura corporativa con identidad caribeña</p>
+                    <div class="project-tags">
+                        <span class="tag">Santo Domingo</span>
+                        <span class="tag">1200m²</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="portfolio-item cultural animate-on-scroll" style="animation-delay: 0.3s">
-                <div class="portfolio-image-container">
+
+            <div class="portfolio-card-modern cultural">
+                <div class="card-image-container">
                     <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         class="portfolio-image" 
-                         alt="Centro Cultural Moca" />
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Cultural</span>
-                            <h3 class="portfolio-title">Centro Cultural Moca</h3>
-                            <p class="portfolio-description">Espacio comunitario que celebra la cultura local</p>
-                            <div class="portfolio-details">
-                                <span><Icon Name="IconName.Calendar" /> 2021</span>
-                                <span><Icon Name="IconName.GeoAlt" /> Moca, RD</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-action">
-                            <Button Color="ButtonColor.Light" Class="view-project-btn">
-                                Ver Proyecto <Icon Name="IconName.ArrowRight" class="ms-2" />
-                            </Button>
-                        </div>
+                         alt="Centro Cultural Moca" class="card-image" />
+                    <div class="card-overlay">
+                        <Button Color="ButtonColor.Light" Class="view-btn">
+                            <Icon Name="IconName.Eye" class="me-2" />
+                            Ver Proyecto
+                        </Button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category">Cultural</span>
+                        <span class="year">2021</span>
+                    </div>
+                    <h4 class="project-title">Centro Cultural Moca</h4>
+                    <p class="project-description">Espacio comunitario que celebra la cultura local</p>
+                    <div class="project-tags">
+                        <span class="tag">Moca, RD</span>
+                        <span class="tag">800m²</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="portfolio-item residential animate-on-scroll" style="animation-delay: 0.4s">
-                <div class="portfolio-image-container">
+
+            <div class="portfolio-card-modern residential">
+                <div class="card-image-container">
                     <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         class="portfolio-image" 
-                         alt="Villa Coral" />
-                    <div class="portfolio-overlay">
-                        <div class="portfolio-info">
-                            <span class="portfolio-category">Residencial</span>
-                            <h3 class="portfolio-title">Villa Coral</h3>
-                            <p class="portfolio-description">Lujo tropical con vista al Caribe</p>
-                            <div class="portfolio-details">
-                                <span><Icon Name="IconName.Calendar" /> 2024</span>
-                                <span><Icon Name="IconName.GeoAlt" /> Punta Cana</span>
-                            </div>
-                        </div>
-                        <div class="portfolio-action">
-                            <Button Color="ButtonColor.Light" Class="view-project-btn">
-                                Ver Proyecto <Icon Name="IconName.ArrowRight" class="ms-2" />
-                            </Button>
-                        </div>
+                         alt="Villa Coral" class="card-image" />
+                    <div class="card-overlay">
+                        <Button Color="ButtonColor.Light" Class="view-btn">
+                            <Icon Name="IconName.Eye" class="me-2" />
+                            Ver Proyecto
+                        </Button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category">Residencial</span>
+                        <span class="year">2024</span>
+                    </div>
+                    <h4 class="project-title">Villa Coral</h4>
+                    <p class="project-description">Lujo tropical con vista al Caribe</p>
+                    <div class="project-tags">
+                        <span class="tag">Punta Cana</span>
+                        <span class="tag">450m²</span>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="text-center mt-5">
             <Button Color="ButtonColor.Primary" 
                     Size="ButtonSize.Large" 
-                    Class="view-all-portfolio-btn animate-on-scroll">
+                    Class="btn-primary-modern">
                 Ver Portafolio Completo
                 <Icon Name="IconName.ArrowRight" class="ms-2" />
             </Button>
@@ -326,177 +365,112 @@
     </div>
 </section>
 
-<section class="process-section">
+<section id="contacto" class="contact-modern">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mb-5">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title">Mi Proceso Creativo</h2>
-                    <p class="section-subtitle">
-                        Cómo transformo ideas en realidades arquitectónicas
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="contact-info-modern">
+                    <div class="section-badge">
+                        <Icon Name="IconName.ChatDots" Class="me-2" />
+                        Contacto
+                    </div>
+                    <h2 class="section-title-modern">
+                        Hablemos de tu
+                        <span class="highlight">próximo proyecto</span>
+                    </h2>
+                    <p class="section-description">
+                        ¿Tienes una idea? Me encantaría conocer tu historia y trabajar juntos 
+                        para crear algo extraordinario.
                     </p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="process-steps">
-            <div class="process-step animate-on-scroll" style="animation-delay: 0.1s">
-                <div class="process-icon">
-                    <Icon Name="IconName.Lightbulb" Size="IconSize.x3" />
-                </div>
-                <div class="process-content">
-                    <h4>Inspiración & Concepto</h4>
-                    <p>Todo comienza con una conversación. Escucho tus sueños, analizo el contexto y encuentro esa chispa de inspiración que dará vida al proyecto.</p>
-                </div>
-            </div>
-            
-            <div class="process-step animate-on-scroll" style="animation-delay: 0.2s">
-                <div class="process-icon">
-                    <Icon Name="IconName.Pencil" Size="IconSize.x3" />
-                </div>
-                <div class="process-content">
-                    <h4>Diseño & Bocetos</h4>
-                    <p>Las ideas toman forma en papel. Bocetos, esquemas y primeras propuestas donde exploramos diferentes posibilidades y refinamos el concepto.</p>
-                </div>
-            </div>
-            
-            <div class="process-step animate-on-scroll" style="animation-delay: 0.3s">
-                <div class="process-icon">
-                    <Icon Name="IconName.Laptop" Size="IconSize.x3" />
-                </div>
-                <div class="process-content">
-                    <h4>Desarrollo Digital</h4>
-                    <p>Modelado 3D, renders fotorrealistas y planos técnicos. La tecnología al servicio de la visualización de tu futuro espacio.</p>
-                </div>
-            </div>
-            
-            <div class="process-step animate-on-scroll" style="animation-delay: 0.4s">
-                <div class="process-icon">
-                    <Icon Name="IconName.Hammer" Size="IconSize.x3" />
-                </div>
-                <div class="process-content">
-                    <h4>Construcción & Supervisión</h4>
-                    <p>Acompañamiento total durante la construcción. Supervisión técnica que garantiza que tu sueño se materialice tal como lo imaginamos.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contacto" class="contact-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center mb-5">
-                <div class="section-header animate-on-scroll">
-                    <h2 class="section-title">Conversemos</h2>
-                    <p class="section-subtitle">
-                        ¿Tienes un proyecto en mente? Me encantaría conocer tu historia
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="contact-container">
-                    <div class="row g-0">
-                        <div class="col-lg-6">
-                            <div class="contact-info animate-on-scroll">
-                                <div class="contact-intro mb-4">
-                                    <h3>Hablemos de tu proyecto</h3>
-                                    <p>Cada gran proyecto comienza con una buena conversación. Cuéntame tu historia, tus sueños y trabajemos juntos para hacerlos realidad.</p>
-                                </div>
-                                
-                                <div class="contact-methods">
-                                    <div class="contact-method">
-                                        <div class="contact-icon">
-                                            <Icon Name="IconName.GeoAlt"/>
-                                        </div>
-                                        <div class="contact-details">
-                                            <h6>Mi Estudio</h6>
-                                            <p>Bávaro, Punta Cana<br>Altagracia, República Dominicana</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="contact-method">
-                                        <div class="contact-icon">
-                                            <Icon Name="IconName.Telephone"/>
-                                        </div>
-                                        <div class="contact-details">
-                                            <h6>Teléfono</h6>
-                                            <p>+1 829 xxx xxxx</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="contact-method">
-                                        <div class="contact-icon">
-                                            <Icon Name="IconName.Envelope"/>
-                                        </div>
-                                        <div class="contact-details">
-                                            <h6>Email</h6>
-                                            <p>hola@alejandromartinez.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="social-links-personal">
-                                    <h6>Sígueme en</h6>
-                                    <div class="social-links">
-                                        <a href="#" class="social-link" title="Instagram">
-                                            <Icon Name="IconName.Instagram"/>
-                                        </a>
-                                        <a href="#" class="social-link" title="LinkedIn">
-                                            <Icon Name="IconName.Linkedin"/>
-                                        </a>
-                                        <a href="#" class="social-link" title="Behance">
-                                            <Icon Name="IconName.Palette"/>
-                                        </a>
-                                    </div>
-                                </div>
+                    
+                    <div class="contact-methods-modern">
+                        <div class="contact-item-modern">
+                            <div class="contact-icon-modern">
+                                <Icon Name="IconName.GeoAlt" />
+                            </div>
+                            <div class="contact-details-modern">
+                                <span class="contact-label">Ubicación</span>
+                                <span class="contact-value">Bávaro, Punta Cana<br>República Dominicana</span>
                             </div>
                         </div>
                         
-                        <div class="col-lg-6">
-                            <div class="contact-form-container animate-on-scroll">
-                                <form class="contact-form">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Tu nombre</label>
-                                        <input type="text" class="form-control" id="name" placeholder="¿Cómo te llamas?">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="tu@email.com">
-                                    </div>
-                                    
-                                    <div class="mb-3">
-                                        <label for="project-type" class="form-label">Tipo de proyecto</label>
-                                        <select class="form-select" id="project-type">
-                                            <option>Selecciona una opción</option>
-                                            <option>Casa familiar</option>
-                                            <option>Apartamento</option>
-                                            <option>Oficina/Comercial</option>
-                                            <option>Remodelación</option>
-                                            <option>Otro</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="mb-4">
-                                        <label for="message" class="form-label">Cuéntame sobre tu proyecto</label>
-                                        <textarea class="form-control" id="message" rows="5" 
-                                                  placeholder="Describe tu proyecto, tus sueños, tus necesidades... Me encanta conocer las historias detrás de cada espacio."></textarea>
-                                    </div>
-                                    
-                                    <Button Color="ButtonColor.Primary" 
-                                            Size="ButtonSize.Large" 
-                                            Class="w-100 send-message-btn">
-                                        <Icon Name="IconName.Send" class="me-2" />
-                                        Enviar Mensaje
-                                    </Button>
-                                </form>
+                        <div class="contact-item-modern">
+                            <div class="contact-icon-modern">
+                                <Icon Name="IconName.Telephone" />
+                            </div>
+                            <div class="contact-details-modern">
+                                <span class="contact-label">Teléfono</span>
+                                <span class="contact-value">+1 829 xxx xxxx</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item-modern">
+                            <div class="contact-icon-modern">
+                                <Icon Name="IconName.Envelope" />
+                            </div>
+                            <div class="contact-details-modern">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">hola@alejandromartinez.com</span>
                             </div>
                         </div>
                     </div>
+
+                    <div class="social-section-modern">
+                        <h6>Sígueme en redes</h6>
+                        <div class="social-links-modern">
+                            <a href="#" class="social-link-modern">
+                                <Icon Name="IconName.Instagram" />
+                            </a>
+                            <a href="#" class="social-link-modern">
+                                <Icon Name="IconName.Linkedin" />
+                            </a>
+                            <a href="#" class="social-link-modern">
+                                <Icon Name="IconName.Palette" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="contact-form-modern">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" class="form-control-modern" placeholder="Tu nombre" />
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control-modern" placeholder="tu@email.com" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Tipo de proyecto</label>
+                            <select class="form-control-modern">
+                                <option>Selecciona una opción</option>
+                                <option>Casa familiar</option>
+                                <option>Apartamento</option>
+                                <option>Oficina/Comercial</option>
+                                <option>Remodelación</option>
+                                <option>Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea class="form-control-modern" rows="5" 
+                                      placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                        </div>
+                        
+                        <Button Color="ButtonColor.Primary" 
+                                Size="ButtonSize.Large" 
+                                Class="btn-primary-modern w-100">
+                            <Icon Name="IconName.Send" class="me-2" />
+                            Enviar Mensaje
+                        </Button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -504,25 +478,6 @@
 </section>
 
 @code {
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            try
-            {
-                await JSRuntime.InvokeVoidAsync("initializeLayout");
-                await Task.Delay(500);
-                await JSRuntime.InvokeVoidAsync("initializeAnimations");
-                await JSRuntime.InvokeVoidAsync("initializePortfolioFilter");
-                await JSRuntime.InvokeVoidAsync("initializeCounters");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error inicializando componentes: {ex.Message}");
-            }
-        }
-    }
-
     private async Task ScrollToProyectos()
     {
         try

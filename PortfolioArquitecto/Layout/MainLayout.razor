@@ -153,8 +153,8 @@
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("initializeLayout");
-            await JSRuntime.InvokeVoidAsync("addScrollListener", DotNetObjectReference.Create(this));
+            await JSRuntime.InvokeVoidAsync("initializeModernPortfolio");
+            // await JSRuntime.InvokeVoidAsync("addScrollListener", DotNetObjectReference.Create(this));
         }
     }
 
